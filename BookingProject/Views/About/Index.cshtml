@@ -1,0 +1,46 @@
+﻿@model List<About>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hakkımızda</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> #</th>
+                        <th>Başlık</th>
+                        <th>Açıklama</th>
+                        <th>Görsel1</th>
+                        <th>Görsel2</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td> @count</td>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td>@item.Image1</td>
+                            <td>@item.Image2</td>
+                            <td><a href="/About/DeleteAbout/@item.AboutID" class="btn btn-gradient-danger btn-rounded btn-fw">Sil</a></td>
+                            <td><a href="/About/UpdateAbout/@item.AboutID" class="btn btn-gradient-success btn-rounded btn-fw">Güncelle</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br />
+            <a href="/About/CreateAbout/" class="btn btn-gradient-primary btn-rounded btn-fw"></i> Yeni Hakkımızda Girişi</a>
+        </div>
+
+    </div>
+</div>

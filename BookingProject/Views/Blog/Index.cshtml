@@ -1,0 +1,47 @@
+﻿@model List<Blog>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Blog</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> #</th>
+                        <th>Görsel</th>
+                        <th>Başlık</th>
+                        <th>Açıklama</th>
+                        <th>Tarih</th>                                                      
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td> @count</td>
+                            <td><img src="@item.ImageUrl" style="height:75px;width:75px;border-radius:50%" /></td>
+                            <td>@item.BlogName</td>
+                            <td>@item.Description</td>
+                            <td>@item.Date</td>                            
+                            <td><a href="/Blog/DeleteBlog/@item.BlogID" class="btn btn-gradient-danger btn-rounded btn-fw">Sil</a></td>
+                            <td><a href="/Blog/UpdateBlog/@item.BlogID" class="btn btn-gradient-success btn-rounded btn-fw">Güncelle</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br />
+            <a href="/Blog/CreateBlog/" class="btn btn-gradient-primary btn-rounded btn-fw"></i> Yeni Blog Girişi</a>
+        </div>
+
+    </div>
+</div>
