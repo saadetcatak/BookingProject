@@ -1,0 +1,23 @@
+﻿@model Subscribe
+@{
+    ViewData["Title"] = "CreateSubscribe";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Abone Ekleme Sayfası</h3>
+            <hr style="color:purple;" />
+            <table class="table table-striped">
+                <form method="post">
+                    <label>Mail</label>
+                    <input type="text" class="form-control" asp-for="Email" />                  
+                    <br />
+                    <button class="btn btn-gradient-light btn-rounded btn-fw"></i>Ekle</button>
+                </form>
+            </table>
+        </div>
+
+    </div>
+</div>

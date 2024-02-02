@@ -1,0 +1,44 @@
+﻿@model List<Discover>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Kapak Sayfası Bilgisi</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> #</th>
+                        <th>Görsel</th>
+                        <th>Başlık</th>
+                        <th>Açıklama</th>                      
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td> @count</td>
+                            <td><img src="@item.ImageUrl" style="height:75px;width:75px;border-radius:50%" /></td>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td><a href="/Discover/DeleteDiscover/@item.DiscoverID" class="btn btn-gradient-danger btn-rounded btn-fw">Sil</a></td>
+                            <td><a href="/Discover/UpdateDiscover/@item.DiscoverID" class="btn btn-gradient-success btn-rounded btn-fw">Güncelle</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br />
+            <a href="/Discover/CreateDiscover/" class="btn btn-gradient-primary btn-rounded btn-fw"></i> Yeni Giriş</a>
+        </div>
+
+    </div>
+</div>

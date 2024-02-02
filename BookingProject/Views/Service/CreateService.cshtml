@@ -1,28 +1,24 @@
-﻿@model About
+﻿@model Service
+
 @{
-    ViewData["Title"] = "UpdateAbout";
+    ViewData["Title"] = "CreateService";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h3 class="card-title">Hakkımızda Güncelleme Sayfası</h3>
+            <h3 class="card-title">Servis Güncelleme Sayfası</h3>
             <hr style="color:purple;" />
             <table class="table table-striped">
                 <form method="post">
-                    <input type="hidden" asp-for="AboutID" />
                     <label>Başlık</label>
                     <input type="text" class="form-control" asp-for="Title" />
                     <br />
                     <label>Açıklama</label>
                     <input type="text" class="form-control" asp-for="Description" />
                     <br />
-                    <label>Görsel1</label>
-                    <input type="text" class="form-control" asp-for="Image1" />
-                    <br />
-                    <label>Görsel2</label>
-                    <input type="text" class="form-control" asp-for="Image2" />
+                    <label>Görsel</label>
+                    <input type="text" class="form-control" asp-for="Image" />
                     <br />
                     <button class="btn btn-gradient-light btn-rounded btn-fw"></i>Ekle</button>
                 </form>

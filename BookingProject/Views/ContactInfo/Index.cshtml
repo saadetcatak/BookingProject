@@ -1,0 +1,48 @@
+﻿@model List<ContactInfo>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count=0;
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">İletişim Bilgileri</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th> #</th>
+                        <th>Açıklama</th>
+                        <th>Adres</th>
+                        <th>Telefon</th>
+                        <th>Mail</th>
+                        <th>Fax</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        count++;
+                        <tr>
+                            <td> @count</td>
+                            <td>@item.Description</td>
+                            <td>@item.Adress</td>
+                            <td>@item.Phone</td>
+                            <td>@item.Email</td>
+                            <td>@item.Fax</td>
+                            <td><a href="/ContactInfo/DeleteContactInfo/@item.ContactInfoID" class="btn btn-gradient-danger btn-rounded btn-fw">Sil</a></td>
+                            <td><a href="/ContactInfo/UpdateContactInfo/@item.ContactInfoID" class="btn btn-gradient-success btn-rounded btn-fw">Güncelle</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <br />
+            <a href="/ContactInfo/CreateContactInfo/" class="btn btn-gradient-primary btn-rounded btn-fw"></i> Yeni Bilgi Girişi</a>
+        </div>
+
+    </div>
+</div>

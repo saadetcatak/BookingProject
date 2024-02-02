@@ -7,7 +7,7 @@ namespace BookingProject.Dal.Entities
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string ServicesID { get; set; }
+        public string ServiceID { get; set; }
         public string Image { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
