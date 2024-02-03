@@ -1,0 +1,31 @@
+﻿@model Testimonial
+
+@{
+    ViewData["Title"] = "TestimonialDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row"></div>
+<div class="col-md-12 stretch-card grid-margin">
+    <div class="card bg-gradient-primary card-img-holder text-white">
+        <div class="card-body">
+            <img src="~/PurpleAdmin/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+            <h4 class="font-weight-normal mb-3">
+                <i class="mdi mdi-diamond mdi-24px float-right"></i>Yorum Detaları
+            </h4>
+            <table class="table table-striped">
+                <tr>
+                    <th>Ad Soyad :</th>
+                    <td>@Model.NameSurname</td>
+                </tr>
+                <tr>
+                    <th>Yorum :</th>
+                    <td>@Model.Description</td>
+                </tr>               
+            </table>
+
+        </div>
+    </div>
+</div>
+
+</div>

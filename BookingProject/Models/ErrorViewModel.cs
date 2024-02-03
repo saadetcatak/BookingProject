@@ -7,3 +7,6 @@ namespace BookingProject.Models
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }
+
+
+
